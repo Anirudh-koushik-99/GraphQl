@@ -6,8 +6,8 @@ const schema = require('./schema/schema')
 
 const app = express();
 
-app.use('/grapgql', graphqlHTTP({
-    schema: schema,
+app.use('/graphql', graphqlHTTP({
+    schema,
     graphiql: process.env.NODE_ENV === 'development',
     
 }))
