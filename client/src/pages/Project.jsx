@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import { GET_PROJECT } from '../queries/projectQueries'
 import Loader from '../components/Loader'
 import ClientInfo from '../components/ClientInfo'
+import DeleteProjectButton from '../components/DeleteProjectButton.jsx'
 
 
 const Project = () => {
@@ -25,6 +26,8 @@ if(error) return <p>Something went wrong</p>
             <p className='lead'>{data.project.status}</p>
             
             <ClientInfo client={data.project.client}/>
+
+            <DeleteProjectButton projectId={data.project.id} />
         </div>
       )}
     </>

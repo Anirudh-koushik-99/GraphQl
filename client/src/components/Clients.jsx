@@ -7,7 +7,7 @@ import Loader from "./Loader";
 
 const Clients = () => {
   const { loading, error, data } = useQuery(GET_CLIENTS);
-  if(loading) return <Loader />
+
   if(error) return <p>Something went wrong</p>
   return <>{!loading && !error && (
     <table className="table table-hover mt-3">
