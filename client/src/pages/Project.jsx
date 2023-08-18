@@ -5,6 +5,7 @@ import { GET_PROJECT } from '../queries/projectQueries'
 import Loader from '../components/Loader'
 import ClientInfo from '../components/ClientInfo'
 import DeleteProjectButton from '../components/DeleteProjectButton.jsx'
+import EditProjectForm from '../components/EditProjectForm'
 
 
 const Project = () => {
@@ -27,7 +28,9 @@ if(error) return <p>Something went wrong</p>
             
             <ClientInfo client={data.project.client}/>
 
+            <EditProjectForm project={data.project}/>
             <DeleteProjectButton projectId={data.project.id} />
+            
         </div>
       )}
     </>
